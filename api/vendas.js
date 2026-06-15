@@ -1,6 +1,6 @@
 export default async function handler(req,res){
 
-    const webhook = process.env.WEBHOOK_URL;
+    const webhook = "https://discord.com/api/webhooks/1515873413095493684/CrM4ZnXkdRpblBt9xWod9tfb7-6i9bS7p9mhq2irgk4QRUs-Uirk0BfXvgV4DRvFNTkk";
 
     const {
         item,
