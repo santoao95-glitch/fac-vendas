@@ -11,8 +11,12 @@ document
     const quantidade =
         document.getElementById("quantidade").value;
 
-    const resposta = await fetch("/api/vendas", {
+    if (!item || !desconto || !quantidade) {
+        alert("Preencha todos os campos.");
+        return;
+    }
 
+    const resposta = await fetch("/api/vendas", {
         method:"POST",
 
         headers:{
@@ -24,11 +28,12 @@ document
             desconto,
             quantidade
         })
-
     });
 
     if(resposta.ok){
-        alert("Venda enviada.");
+        alert("Venda enviada com sucesso!");
+    } else {
+        alert("Erro ao enviar venda.");
     }
 
 });
